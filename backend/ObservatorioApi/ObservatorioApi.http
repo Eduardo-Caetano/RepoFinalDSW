@@ -1,0 +1,6 @@
+@ObservatorioApi_HostAddress = http://localhost:5022
+
+GET {{ObservatorioApi_HostAddress}}/swagger/v1/swagger.json
+Accept: application/json
+
+###
