@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("ObservatorioApi")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+b456c178d2aa5c90a0bdad7b3d1d72d052790b4d")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+8ca90f7cb509e2f3590ce7fcb49647942f57387b")]
 [assembly: System.Reflection.AssemblyProductAttribute("ObservatorioApi")]
 [assembly: System.Reflection.AssemblyTitleAttribute("ObservatorioApi")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
