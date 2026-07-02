@@ -10,6 +10,9 @@ builder.Services.AddDbContext<AppDbContext>(options =>
 builder.Services.AddHttpClient();
 builder.Services.AddScoped<ImportacaoDeputadosService>();
 builder.Services.AddScoped<ImportacaoDespesasService>();
+builder.Services.AddScoped<ImportacaoAtuacaoService>();
+builder.Services.AddScoped<PresencaScrapingService>();
+builder.Services.AddScoped<AtuacaoParlamentarService>();
 
 builder.Services.AddCors(options =>
 {

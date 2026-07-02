@@ -9,13 +9,16 @@ public class ImportacaoController : ControllerBase
 {
     private readonly ImportacaoDeputadosService _importacaoDeputadosService;
     private readonly ImportacaoDespesasService _importacaoDespesasService;
+    private readonly ImportacaoAtuacaoService _importacaoAtuacaoService;
 
     public ImportacaoController(
         ImportacaoDeputadosService importacaoDeputadosService,
-        ImportacaoDespesasService importacaoDespesasService)
+        ImportacaoDespesasService importacaoDespesasService,
+        ImportacaoAtuacaoService importacaoAtuacaoService)
     {
         _importacaoDeputadosService = importacaoDeputadosService;
         _importacaoDespesasService = importacaoDespesasService;
+        _importacaoAtuacaoService = importacaoAtuacaoService;
     }
 
     [HttpPost("deputados")]
@@ -37,5 +40,17 @@ public class ImportacaoController : ControllerBase
         var quantidadeImportada = await _importacaoDespesasService.ImportarDespesasAsync();
 
         return Ok(new { mensagem = $"{quantidadeImportada} despesas importadas com sucesso" });
+    }
+
+    [HttpPost("atuacao")]
+    public async Task<IActionResult> ImportarAtuacao()
+    {
+        var totalProcessados = await _importacaoAtuacaoService.ImportarAtuacoesAsync();
+
+        return Ok(new
+        {
+            mensagem = "Atuacao parlamentar importada/atualizada com sucesso",
+            totalProcessados
+        });
     }
 }

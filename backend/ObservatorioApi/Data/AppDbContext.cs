@@ -12,6 +12,7 @@ public class AppDbContext : DbContext
     public DbSet<Deputado> Deputados { get; set; }
     public DbSet<Despesa> Despesas { get; set; }
     public DbSet<PerfilAnalise> PerfisAnalise { get; set; }
+    public DbSet<AtuacaoParlamentar> AtuacoesParlamentares { get; set; }
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
@@ -47,6 +48,24 @@ public class AppDbContext : DbContext
 
         modelBuilder.Entity<PerfilAnalise>()
             .Property(perfilAnalise => perfilAnalise.Observacoes)
+            .HasColumnType("text");
+
+        modelBuilder.Entity<Deputado>()
+            .HasOne(deputado => deputado.AtuacaoParlamentar)
+            .WithOne(atuacaoParlamentar => atuacaoParlamentar.Deputado)
+            .HasForeignKey<AtuacaoParlamentar>(atuacaoParlamentar => atuacaoParlamentar.DeputadoId)
+            .OnDelete(DeleteBehavior.Cascade);
+
+        modelBuilder.Entity<AtuacaoParlamentar>()
+            .HasIndex(atuacaoParlamentar => atuacaoParlamentar.DeputadoId)
+            .IsUnique();
+
+        modelBuilder.Entity<AtuacaoParlamentar>()
+            .Property(atuacaoParlamentar => atuacaoParlamentar.ComissoesTitular)
+            .HasColumnType("text");
+
+        modelBuilder.Entity<AtuacaoParlamentar>()
+            .Property(atuacaoParlamentar => atuacaoParlamentar.ComissoesSuplente)
             .HasColumnType("text");
     }
 }

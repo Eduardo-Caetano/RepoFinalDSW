@@ -109,3 +109,11 @@ C:\Users\Eduardo\Desktop\FinalDSW\RepoFinalDSW\backend\ObservatorioApi\obj\Debug
 C:\Users\Eduardo\Desktop\FinalDSW\RepoFinalDSW\backend\ObservatorioApi\obj\Debug\net8.0\ObservatorioApi.pdb
 C:\Users\Eduardo\Desktop\FinalDSW\RepoFinalDSW\backend\ObservatorioApi\obj\Debug\net8.0\ObservatorioApi.genruntimeconfig.cache
 C:\Users\Eduardo\Desktop\FinalDSW\RepoFinalDSW\backend\ObservatorioApi\obj\Debug\net8.0\ref\ObservatorioApi.dll
+C:\Users\Eduardo\Desktop\FinalDSW\RepoFinalDSW\tmp\observatorio-build\appsettings.Development.json
+C:\Users\Eduardo\Desktop\FinalDSW\RepoFinalDSW\tmp\observatorio-build\appsettings.json
+C:\Users\Eduardo\Desktop\FinalDSW\RepoFinalDSW\tmp\observatorio-build\ObservatorioApi.exe
+C:\Users\Eduardo\Desktop\FinalDSW\RepoFinalDSW\tmp\observatorio-build\ObservatorioApi.deps.json
+C:\Users\Eduardo\Desktop\FinalDSW\RepoFinalDSW\tmp\observatorio-build\ObservatorioApi.runtimeconfig.json
+C:\Users\Eduardo\Desktop\FinalDSW\RepoFinalDSW\tmp\observatorio-build\ObservatorioApi.dll
+C:\Users\Eduardo\Desktop\FinalDSW\RepoFinalDSW\tmp\observatorio-build\ObservatorioApi.pdb
+C:\Users\Eduardo\Desktop\FinalDSW\RepoFinalDSW\backend\ObservatorioApi\bin\Debug\net8.0\HtmlAgilityPack.dll

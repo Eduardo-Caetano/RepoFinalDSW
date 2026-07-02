@@ -14,7 +14,9 @@ export async function getDeputadoPorId(id) {
   return response.data
 }
 
-export async function getDespesasDeputado(id) {
-  const response = await api.get(`/deputados/${id}/despesas`)
+export async function getDespesasDeputado(id, ano) {
+  const response = await api.get(`/deputados/${id}/despesas`, {
+    params: { ano },
+  })
   return response.data
 }

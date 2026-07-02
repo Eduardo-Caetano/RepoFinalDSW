@@ -69,7 +69,7 @@ public class DeputadosController : ControllerBase
     }
 
     [HttpGet("{id:int}/despesas")]
-    public async Task<IActionResult> ListarDespesas(int id)
+    public async Task<IActionResult> ListarDespesas(int id, [FromQuery] int? ano)
     {
         var deputadoExiste = await _context.Deputados.AnyAsync(deputado => deputado.Id == id);
         if (!deputadoExiste)
@@ -80,6 +80,7 @@ public class DeputadosController : ControllerBase
         var despesas = await _context.Despesas
             .AsNoTracking()
             .Where(despesa => despesa.DeputadoId == id)
+            .Where(despesa => ano == null || despesa.DataDoc.Year == ano)
             .OrderByDescending(despesa => despesa.DataDoc)
             .Select(despesa => new
             {
@@ -95,7 +96,7 @@ public class DeputadosController : ControllerBase
     }
 
     [HttpGet("{id:int}/dashboard-financeiro")]
-    public async Task<IActionResult> ObterDashboardFinanceiro(int id)
+    public async Task<IActionResult> ObterDashboardFinanceiro(int id, [FromQuery] int? ano)
     {
         var deputadoExiste = await _context.Deputados.AnyAsync(deputado => deputado.Id == id);
         if (!deputadoExiste)
@@ -105,7 +106,8 @@ public class DeputadosController : ControllerBase
 
         var despesasQuery = _context.Despesas
             .AsNoTracking()
-            .Where(despesa => despesa.DeputadoId == id);
+            .Where(despesa => despesa.DeputadoId == id)
+            .Where(despesa => ano == null || despesa.DataDoc.Year == ano);
 
         var quantidadeDespesas = await despesasQuery.CountAsync();
         var totalGasto = await despesasQuery.SumAsync(despesa => (decimal?)despesa.Valor) ?? 0;

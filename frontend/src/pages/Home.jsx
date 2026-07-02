@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import { useNavigate } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import { getDeputados } from '../api/deputadoApi.js'
 
 function Home() {
@@ -24,11 +24,29 @@ function Home() {
   }, [])
 
   return (
-    <main className="page-shell">
-      <header className="page-header">
+    <main className="page-shell deputados-page">
+      <nav className="app-topbar" aria-label="Navegação principal">
+        <Link className="app-brand" to="/">
+          Observatório Parlamentar
+        </Link>
+        <div className="app-nav">
+          <Link to="/">Início</Link>
+          <Link className="active" to="/deputados">Deputados</Link>
+        </div>
+      </nav>
+
+      <Link className="back-home-link" to="/">
+        ← Voltar para início
+      </Link>
+
+      <header className="page-header deputados-hero">
         <div>
-          <p className="eyebrow">Observatorio Parlamentar</p>
+          <p className="eyebrow">Observatório Parlamentar</p>
           <h1>Deputados Federais de Santa Catarina</h1>
+          <p>
+            Consulte os parlamentares catarinenses, acompanhe despesas e acesse os dashboards de
+            atuação parlamentar.
+          </p>
         </div>
       </header>
 

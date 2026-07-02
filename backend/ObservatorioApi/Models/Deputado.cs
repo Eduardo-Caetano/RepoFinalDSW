@@ -13,4 +13,5 @@ public class Deputado
 
     public ICollection<Despesa> Despesas { get; set; } = new List<Despesa>();
     public PerfilAnalise? PerfilAnalise { get; set; }
+    public AtuacaoParlamentar? AtuacaoParlamentar { get; set; }
 }
